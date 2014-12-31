@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<title>Soapbox Layout</title>
+		<link rel="stylesheet" href="css/sb.css" type="text/css" />
+		<style>
+			.sb-shell-header {
+				position : absolute;
+				top : 0;
+				left : 0;
+				right : 0;
+				height : 72px;
+			}
+			.sb-shell-header-logo {
+				position : absolute;
+				top : 4px;
+				left : 4px;
+				height : 64px;
+				width : 256px;
+				background : orange;
+			}
+			.sb-shell-main {
+				position : absolute;
+				top : 72px;
+				left : 4px;
+				bottom : 4px;
+				right : 4px;
+				min-width : 500px;
+				min-height : 500px;
+				background : red;
+			}
+			.sb-shell-main-menubar {
+				top : 72px;
+				bottom : 0;
+				left : 4px;
+				right : 4px;
+				height : 40px;
+				background : green;
+			}
+			.sb-shell-main-menubar-menu {
+				top : 72px;
+				bottom : 0;
+				left : 4px;
+				min-height : 40px;
+				min-width : 350px;
+				float : left;
+				background : violet;
+			}
+			.sb-shell-main-menubar-auth {
+				top : 72px;
+				bottom : 0;
+				right : 4px;
+				min-height : 40px;
+				width : 150px;
+				float : right;
+				background : blue;
+			}
+			.sb-shell-main-content {
+				position : absolute;
+				top : 40px;
+				bottom : 0;
+				right : 0;
+				left : 0;
+				min-width : 500px;
+				background : #ddd;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="sb">
+			<div class="sb-shell-header">
+				<div class="sb-shell-header-logo">LOGO</div>
+			</div>
+			<div class="sb-shell-main">
+				<div class="sb-shell-main-menubar">
+					<div class="sb-shell-main-menubar-menu">
+						MENU
+					</div>
+					<div class="sb-shell-main-menubar-auth">
+						AUTH
+					</div>
+				</div>
+				<div class="sb-shell-main-content">
+					CONTENT
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
