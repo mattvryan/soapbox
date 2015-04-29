@@ -1,5 +1,4 @@
 <html>
-<head>
 	<title>Soapbox</title>
 	
 	<!-- Style -->
@@ -10,21 +9,14 @@
 
 	<link rel="stylesheet" href="css/soapbox.css" type="text/css" />
 	<link rel="stylesheet" href="css/soapbox.shell.css" type="text/css" />
-	
-	<!-- JQuery -->
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
-	</script>
-	
-	<!-- Ember / Angular -->
-	
-	<!-- Bootstrap -->
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js">
-	</script>
-	
-	<!-- Marked -->
-	<script type="text/javascript" src="js/3rdparty/marked.min.js">
-	</script>
-	
+
+	<script src="js/soapbox.pre.js"></script>
+    <script>
+        jsLoad('jquery');
+        jsLoad('angular');
+        jsLoad('bootstrap');
+    </script>
+
 	<script type="text/javascript" src="js/soapbox.js"></script>
 	<script type="text/javascript" src="js/soapbox.shell.js"></script>
 	
