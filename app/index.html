@@ -1,32 +1,182 @@
+<!DOCTYPE html>
 <html>
 	<title>Soapbox</title>
-	
-	<!-- Style -->
-	<!-- Bootstrap -->
-	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />-->
-	<!-- Optional theme -->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
+    <meta charset="utf-8"/>
+    <head>
+        <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.js"></script>
+        <![endif]-->
+        <!-- Style -->
+        <!-- Bootstrap -->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />-->
+        <!-- Optional theme -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
 
-	<link rel="stylesheet" href="css/soapbox.css" type="text/css" />
-	<link rel="stylesheet" href="css/soapbox.shell.css" type="text/css" />
+        <!--<link rel="stylesheet" href="css/soapbox.css" type="text/css" />-->
+        <!--<link rel="stylesheet" href="css/soapbox.shell.css" type="text/css" />-->
 
-	<script src="js/soapbox.pre.js"></script>
-    <script>
-        jsLoad('jquery');
-        jsLoad('angular');
-        jsLoad('bootstrap');
-    </script>
+        <style>
+            * {
+                margin : 0;
+                padding : 0;
+                -webkit-box-sizing : border-box;
+                -moz-box-sizing : border-box;
+                -box-sizing : border-box;
+            }
+            h1, h2, h3, h4, h5, h6, p { margin-bottom : 10px; }
+            ol, ul, dl { list-style-position : inside; }
 
-	<script type="text/javascript" src="js/soapbox.js"></script>
-	<script type="text/javascript" src="js/soapbox.shell.js"></script>
+            body {
+                font : 13px 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
+                color : #444;
+                background-color : #000;
+            }
+            a { text-decoration : none; }
+            a:link, a:visited { color : inherit; }
+            a:hover { text-decoration : underline; }
+
+            strong {
+                font-weight : 800;
+                color : #000;
+            }
+
+            header {
+                top: 0
+                left: 0;
+                height: 80px;
+                width: 100%;
+                background-color: #AAA;
+            }
+
+            section {
+                width: 100%;
+                background-color: #BBB;
+            }
+
+            #sb_login, #sb_login_icon, #sb_search, #sb_search_icon, #sb_menu, #sb_menu_icon {
+                float: right;
+            }
+
+            #sb_menu ul, #sb_menu li {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+            #sb_footer {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 36px;
+                width: 100%;
+                background-color: #CCC;
+            }
+
+            #sb_nav ul, #sb_nav li {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+            }
+
+            #sb_nav li {
+                float: left;
+            }
+
+            #sb_nav a {
+                display: block;
+                width: 60px;
+            }
+
+        </style>
+
+        <script src="js/soapbox.pre.js"></script>
+        <script>
+            jsLoad('jquery');
+            jsLoad('angular');
+            jsLoad('bootstrap');
+        </script>
+
+        <!--<script type="text/javascript" src="js/soapbox.js"></script>-->
+        <!--<script type="text/javascript" src="js/soapbox.shell.js"></script>-->
 	
-	<!-- Soapbox -->
-	<script type="text/javascript">
-		$(function () { soapbox.initModule( $('#soapbox') ); });
-	</script>
-</head>
-	
-<body>
-	<div id="soapbox"/>
-</body>
+        <!-- Soapbox -->
+        <!--<script type="text/javascript">
+            $(function () { soapbox.initModule( $('#soapbox') ); });
+        </script>
+        -->
+        <script type="text/javascript">
+            $(function () {
+                $('#sb_menu').hide();
+                $('#sb_menu_icon').click( function() {
+                    if ($('#sb_menu:visible').length) {
+                        $('#sb_menu').fadeOut();
+                    } else {
+                        $('#sb_menu').slideDown();
+                    }
+                });
+                $('#sb_search').hide();
+                $('#sb_search_icon').click( function() {
+                    if ($('#sb_search:visible').length) {
+                        $('#sb_search').fadeOut();
+                    } else {
+                        $('#sb_search').slideDown();
+                    }
+                });
+                $('#sb_login').hide();
+                $('#sb_login_icon').click( function() {
+                    if ($('#sb_login:visible').length) {
+                        $('#sb_login').fadeOut();
+                    } else {
+                        $('#sb_login').slideDown();
+                    }
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+    <!--<div id="soapbox"/>-->
+        <header>
+            <img src="logo.jpg" alt="logo"/>
+            <img src="menu.png" alt="menu" id="sb_menu_icon"/>
+            <img id="sb_search_icon" src="search.png" alt="search"/>
+            <img id="sb_login_icon" src="login.png" alt="login"/>
+        </header>
+        <div id="sb_menu">
+            <ul>
+                <li>Home</li>
+                <li>Projects</li>
+                <li>About</li>
+            </ul>
+        </div>
+        <div id="sb_search">
+            <form>
+                SEARCH: <input type="text"/><br/>
+            </form>
+        </div>
+        <div id="sb_login">
+            LOGIN
+            <form>
+                Username: <input type="text"/><br/>
+                Password: <input type="password"/><br/>
+                <input type="submit"/>
+            </form>
+        </div>
+        <section>
+            <h1>Section Heading</h1>
+            <p>Section Content</p>
+            <article>
+                <h1>Article 1 Heading</h1>
+                <p>Article 1 Content</p>
+            </article>
+            <article>
+                <h1>Article 2 Heading</h1>
+                <p>Article 2 Content</p>
+            </article>
+        </section>
+        <div id="sb_footer">
+            FOOTER
+        </div>
+    </div>
+    </body>
 </html>
