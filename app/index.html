@@ -11,108 +11,8 @@
         <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />-->
         <link rel="stylesheet" href="css/bootstrap.min.css" />
         <!--<link rel="stylesheet" href="css/bootstrap-theme.min.css" />-->
-        <!-- Optional theme -->
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css"> -->
 
-        <!--<link rel="stylesheet" href="css/soapbox.css" type="text/css" />-->
-        <!--<link rel="stylesheet" href="css/soapbox.shell.css" type="text/css" />-->
-
-        <style>
-            * {
-                margin : 0;
-                padding : 0;
-                -webkit-box-sizing : border-box;
-                -moz-box-sizing : border-box;
-                -box-sizing : border-box;
-            }
-            h1, h2, h3, h4, h5, h6, p { margin-bottom : 10px; }
-            ol, ul, dl { list-style-position : inside; }
-
-            body {
-                font : 13px 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
-                color : #444;
-                background-color : #000;
-            }
-            a { text-decoration : none; }
-            a:link, a:visited { color : inherit; }
-            a:hover { text-decoration : underline; }
-
-            strong {
-                font-weight : 800;
-                color : #000;
-            }
-
-            header {
-                top: 0
-                left: 0;
-                height: 36px;
-                width: 100%;
-                background-color: #AAA;
-            }
-
-            section {
-                width: 100%;
-                background-color: #BBB;
-            }
-
-            #sb_login_button, #sb_logout_button, #sb_search_button, #sb_menu_button {
-                float: right;
-                width: 36px;
-                height: 36px;
-            }
-
-            #sb_login div {
-                padding: 6px;
-            }
-
-            #sb_login_submit {
-                float: right;
-            }
-
-            .sb_dropdown {
-                position: absolute;
-                top: 36px;
-                background-color: orange;
-                right: 0;
-                padding: 18px;
-            }
-
-            .sb_dropdown input[type=text], .sb_dropdown input[type=password] {
-                float: right;
-                width: 120px;
-            }
-
-            #sb_menu ul, #sb_menu li {
-                margin: 0;
-                padding: 0;
-                list-style-type: none;
-            }
-
-            #sb_footer {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                height: 32px;
-                width: 100%;
-                background-color: #CCC;
-            }
-
-            #sb_nav ul, #sb_nav li {
-                margin: 0;
-                padding: 0;
-                list-style-type: none;
-            }
-
-            #sb_nav li {
-                float: left;
-            }
-
-            #sb_nav a {
-                display: block;
-                width: 60px;
-            }
-
-        </style>
+        <link rel="stylesheet" href="css/soapbox.css" type="text/css" />
 
         <script src="js/soapbox.pre.js"></script>
         <script>
@@ -121,100 +21,34 @@
             jsLoad('bootstrap');
         </script>
 
-        <!--<script type="text/javascript" src="js/soapbox.js"></script>-->
+        <script type="text/javascript" src="js/soapbox.js"></script>
         <!--<script type="text/javascript" src="js/soapbox.shell.js"></script>-->
 	
         <!-- Soapbox -->
+        <script type="text/javascript">
+            $(function () { createToolbar(); });
+        </script>
         <!--<script type="text/javascript">
             $(function () { soapbox.initModule( $('#soapbox') ); });
         </script>
         -->
-        <script type="text/javascript">
-            $(function () {
-                $('#sb_menu').hide();
-                $('#sb_menu_button').click( function() {
-                    $('#sb_search').fadeOut();
-                    $('#sb_login').fadeOut();
-                    $('#sb_logout').fadeOut();
-                    if ($('#sb_menu:visible').length) {
-                        $('#sb_menu').fadeOut();
-                    } else {
-                        $('#sb_menu').slideDown();
-                    }
-                });
-                $('#sb_search').hide();
-                $('#sb_search_button').click( function() {
-                    $('#sb_menu').fadeOut();
-                    $('#sb_login').fadeOut();
-                    $('#sb_logout').fadeOut();
-                    if ($('#sb_search:visible').length) {
-                        $('#sb_search').fadeOut();
-                    } else {
-                        $('#sb_search').slideDown();
-                        $('#sb_search_input').focus();
-                    }
-                });
-                $('#sb_login').hide();
-                $('#sb_login_error_msg').css('visibility','hidden');
-                $('#sb_login_button').click( function() {
-                    $('#sb_menu').fadeOut();
-                    $('#sb_search').fadeOut();
-                    $('#sb_logout').fadeOut();
-                    if ($('#sb_login:visible').length) {
-                        $('#sb_login').fadeOut();
-                    } else {
-                        $('#sb_login').slideDown();
-                        $('#sb_login_username_input').focus();
-                    }
-                });
-                $('#sb_logout_button').hide().click( function() {
-                    $('#sb_menu').fadeOut();
-                    $('#sb_search').fadeOut();
-                    $('#sb_login').fadeOut();
-                    if ($('#sb_logout:visible').length) {
-                        $('#sb_logout').fadeOut();
-                    } else {
-                        $('#sb_logout').slideDown();
-                    }
-                });
-                $('#sb_login_submit_button').click( function(e) {
-                    e.preventDefault();
-                    $('#sb_login').fadeOut();
-                    $('#sb_login_button').hide();
-                    $('#sb_logout_button').show();
-                });
-                $('#sb_logout').hide().click( function(e) {
-                    e.preventDefault();
-                    $('#sb_logout').fadeOut();
-                    $('#sb_logout_button').hide();
-                    $('#sb_login_button').show();
-                });
-                $('#sb_login_username').focus( function() {
-                    $(this).value='';
-                });
-            });
-        </script>
     </head>
 
     <body>
         <header>
             <img src="img/logo.jpg" alt="logo"/>
-            <!--<img id="sb_menu_icon" src="img/menu.png" alt="menu"/>-->
             <button type="button" id="sb_menu_button" aria-label="Menu">
                 <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
             </button>
             <button type="button" id="sb_search_button" aria-label="Search">
                 <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </button>
-            <!--<img id="sb_search_icon" src="img/search.png" alt="search"/>-->
             <button type="button" id="sb_login_button" aria-label="Log In">
                 <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
             </button>
-            <!--<img id="sb_login_icon" src="img/login.png" alt="login"/>-->
             <button type="button" id="sb_logout_button" aria-label="Log Out">
                 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
             </button>
-            <!--<img id="sb_logout_icon" src="img/logout.png" alt="logout"/>-->
         </header>
         <div id="sb_menu" class="sb_dropdown">
             <ul>
@@ -229,7 +63,6 @@
             </form>
         </div>
         <div id="sb_login" class="sb_dropdown">
-            <div id="sb_login_error_msg">Invalid Username/Password</div>
             <form>
                 <div id="sb_login_username">
                     <span id="sb_login_username_label">Username: </span>

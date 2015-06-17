@@ -13,11 +13,10 @@
 h1, h2, h3, h4, h5, h6, p { margin-bottom : 10px; }
 ol, ul, dl { list-style-position : inside; }
 
-
 body {
 	font : 13px 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
 	color : #444;
-	background-color : #888;
+	background-color : #000;
 }
 a { text-decoration : none; }
 a:link, a:visited { color : inherit; }
@@ -28,24 +27,72 @@ strong {
 	color : #000;
 }
 
-#soapbox {
-	position : absolute;
-	top : 8px;
-	left : 8px;
-	bottom : 8px;
-	right : 8px;
-	min-height : 500px;
-	min-width : 500px;
-	overflow : hidden;
-	background-color : #fff;
-	border-radius : 0 8px 0 8px;
+header {
+	top: 0
+left: 0;
+	height: 36px;
+	width: 100%;
+	background-color: #AAA;
 }
 
-.soapbox-x-select {}
-.soapbox-x-clearfloat {
-	height : 0 !important;
-	float : none !important;
-	visibility : hidden !important;
-	clear : both !important;
+section {
+	width: 100%;
+	background-color: #BBB;
 }
 
+#sb_login_button, #sb_logout_button, #sb_search_button, #sb_menu_button {
+	float: right;
+	width: 36px;
+	height: 36px;
+}
+
+#sb_login div {
+	padding: 6px;
+}
+
+#sb_login_submit {
+	float: right;
+}
+
+.sb_dropdown {
+	position: absolute;
+	top: 36px;
+	background-color: orange;
+	right: 0;
+	padding: 18px;
+}
+
+.sb_dropdown input[type=text], .sb_dropdown input[type=password] {
+	float: right;
+	width: 120px;
+}
+
+#sb_menu ul, #sb_menu li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#sb_footer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 32px;
+	width: 100%;
+	background-color: #CCC;
+}
+
+#sb_nav ul, #sb_nav li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#sb_nav li {
+	float: left;
+}
+
+#sb_nav a {
+	display: block;
+	width: 60px;
+}

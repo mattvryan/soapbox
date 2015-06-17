@@ -20,6 +20,7 @@ _sb_js_load_map =
         'test': '$.fn.modal'
     }
 }
+
 function jsLoad(jsLibName) {
     jsLib = _sb_js_load_map[jsLibName];
     if (jsLib) {
@@ -28,7 +29,7 @@ function jsLoad(jsLibName) {
         + '"\x3E\x3C/script\x3E');
         document.write('\x3Cscript\x3E'
         + jsLib['test']
-        + ' || document.write(\'\x3Cscript src="js/3rdparty/'
+        + ' || document.write(\'\x3Cscript src="js/'
         + jsLib['local']
         + '"\x3E\x3C\\/script\x3E\');\x3C/script\x3E');
     }
