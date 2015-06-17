@@ -12,7 +12,7 @@
 
 function createToolbar() {
 	$('#sb_menu').hide();
-	$('#sb_menu_button').click( function() {
+	$('#sb_menu_toolbar_icon').click( function() {
 		$('#sb_search').fadeOut();
 		$('#sb_login').fadeOut();
 		$('#sb_logout').fadeOut();
@@ -23,7 +23,7 @@ function createToolbar() {
 		}
 	});
 	$('#sb_search').hide();
-	$('#sb_search_button').click( function() {
+	$('#sb_search_toolbar_icon').click( function() {
 		$('#sb_menu').fadeOut();
 		$('#sb_login').fadeOut();
 		$('#sb_logout').fadeOut();
@@ -35,7 +35,7 @@ function createToolbar() {
 		}
 	});
 	$('#sb_login').hide();
-	$('#sb_login_button').click( function() {
+	$('#sb_login_toolbar_icon').click( function() {
 		$('#sb_menu').fadeOut();
 		$('#sb_search').fadeOut();
 		$('#sb_logout').fadeOut();
@@ -46,7 +46,7 @@ function createToolbar() {
 			$('#sb_login_username_input').focus();
 		}
 	});
-	$('#sb_logout_button').hide().click( function() {
+	$('#sb_logout_toolbar_icon').hide().click( function() {
 		$('#sb_menu').fadeOut();
 		$('#sb_search').fadeOut();
 		$('#sb_login').fadeOut();
@@ -59,14 +59,14 @@ function createToolbar() {
 	$('#sb_login_submit_button').click( function(e) {
 		e.preventDefault();
 		$('#sb_login').fadeOut();
-		$('#sb_login_button').hide();
-		$('#sb_logout_button').show();
+		$('#sb_login_toolbar_icon').hide();
+		$('#sb_logout_toolbar_icon').show();
 	});
 	$('#sb_logout').hide().click( function(e) {
 		e.preventDefault();
 		$('#sb_logout').fadeOut();
-		$('#sb_logout_button').hide();
-		$('#sb_login_button').show();
+		$('#sb_logout_toolbar_icon').hide();
+		$('#sb_login_toolbar_icon').show();
 	});
 	$('#sb_login_username').focus( function() {
 		$(this).value='';

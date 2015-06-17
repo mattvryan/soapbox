@@ -40,7 +40,7 @@ section {
 	background-color: #BBB;
 }
 
-#sb_login_button, #sb_logout_button, #sb_search_button, #sb_menu_button {
+#sb_login_toolbar_icon, #sb_logout_toolbar_icon, #sb_search_toolbar_icon, #sb_menu_toolbar_icon {
 	float: right;
 	width: 36px;
 	height: 36px;
