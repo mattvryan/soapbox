@@ -4,54 +4,54 @@
 
 /* Reset */
 * {
-	margin : 0;
-	padding : 0;
-	-webkit-box-sizing : border-box;
-	-moz-box-sizing : border-box;
-	-box-sizing : border-box;
+    margin : 0;
+    padding : 0;
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing : border-box;
+    -box-sizing : border-box;
 }
 h1, h2, h3, h4, h5, h6, p { margin-bottom : 10px; }
 ol, ul, dl { list-style-position : inside; }
 
 body {
-	font : 13px 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
-	color : #444;
-	background-color : #000;
+    font : 13px 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif;
+    color : #444;
+    background-color : #000;
 }
 a { text-decoration : none; }
 a:link, a:visited { color : inherit; }
 a:hover { text-decoration : underline; }
 
 strong {
-	font-weight : 800;
-	color : #000;
+    font-weight : 800;
+    color : #000;
 }
 
 header {
-	top: 0
+    top: 0
 left: 0;
-	height: 36px;
-	width: 100%;
-	background-color: #AAA;
+    height: 36px;
+    width: 100%;
+    background-color: #AAA;
 }
 
 section {
-	width: 100%;
-	background-color: #BBB;
+    width: 100%;
+    background-color: #BBB;
 }
 
 #sb_login_toolbar_icon, #sb_logout_toolbar_icon, #sb_search_toolbar_icon, #sb_menu_toolbar_icon {
-	float: right;
-	width: 36px;
-	height: 36px;
+    float: right;
+    width: 36px;
+    height: 36px;
 }
 
 #sb_login div, #sb_search div {
-	padding: 6px;
+    padding: 6px;
 }
 
 #sb_login_submit, #sb_search_submit {
-	float: right;
+    float: right;
 }
 
 #sb_login_submit_button, #sb_search_submit_button {
@@ -59,44 +59,44 @@ section {
 }
 
 .sb_dropdown {
-	position: absolute;
-	top: 36px;
-	background-color: orange;
-	right: 0;
-	padding: 18px;
+    position: absolute;
+    top: 36px;
+    background-color: orange;
+    right: 0;
+    padding: 18px;
 }
 
 .sb_dropdown input[type=text], .sb_dropdown input[type=password] {
-	float: right;
-	width: 120px;
+    float: right;
+    width: 120px;
 }
 
 #sb_menu ul, #sb_menu li {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 #sb_footer {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	height: 32px;
-	width: 100%;
-	background-color: #CCC;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 32px;
+    width: 100%;
+    background-color: #CCC;
 }
 
 #sb_nav ul, #sb_nav li {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
 #sb_nav li {
-	float: left;
+    float: left;
 }
 
 #sb_nav a {
-	display: block;
-	width: 60px;
+    display: block;
+    width: 60px;
 }
