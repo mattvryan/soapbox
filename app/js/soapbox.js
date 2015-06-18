@@ -44,6 +44,7 @@ function createToolbar() {
 		} else {
 			$('#sb_login').slideDown();
 			$('#sb_login_username_input').focus();
+            $('#sb_login_submit_button').attr('disabled', true);
 		}
 	});
 	$('#sb_logout_toolbar_icon').hide().click( function() {
@@ -58,17 +59,49 @@ function createToolbar() {
 	});
 	$('#sb_login_submit_button').click( function(e) {
 		e.preventDefault();
+        // change the submit button to a washing machine
+        var username_input = $('#sb_login_username_input');
+        var password_input = $('#sb_login_password_input');
+        var login_result = login(username_input.val(), password_input.val());
 		$('#sb_login').fadeOut();
-		$('#sb_login_toolbar_icon').hide();
-		$('#sb_logout_toolbar_icon').show();
+        username_input.val('');
+        password_input.val('');
+        if (login_result) {
+            $('#sb_login_toolbar_icon').hide();
+            $('#sb_logout_toolbar_icon').show();
+        } else {
+            alert('Invalid login credential supplied.');
+        }
 	});
 	$('#sb_logout').hide().click( function(e) {
 		e.preventDefault();
 		$('#sb_logout').fadeOut();
 		$('#sb_logout_toolbar_icon').hide();
 		$('#sb_login_toolbar_icon').show();
+        logout();
 	});
-	$('#sb_login_username').focus( function() {
-		$(this).value='';
-	});
+    $('#sb_login_username_input').keyup( function() {
+        $('#sb_login_submit_button').attr('disabled', $(this).val().length == 0 || $('#sb_login_password_input').val().length == 0);
+    });
+    $('#sb_login_password_input').keyup( function() {
+        $('#sb_login_submit_button').attr('disabled', $(this).val().length == 0 || $('#sb_login_username_input').val().length == 0);
+    })
+}
+
+function login(username, password) {
+    if (! username || 0 == username.length || ! password || 0 == password.length)
+    {
+        return false;
+    }
+    // login here
+
+    // dummy login
+    if (username === 'abc' && password === '123') {
+        return true;
+    }
+    return false;
+}
+
+function logout() {
+    // logout here
 }
