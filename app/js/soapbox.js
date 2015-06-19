@@ -34,7 +34,12 @@ function createToolbar() {
     $('#sb_login_submit_button').click( function(e) {
         e.preventDefault();
         // change the submit button to a washing machine
-        var login_result = login($('#sb_login_username_input').val(), $('#sb_login_password_input').val(), onLoginSucceeded, onLoginFailed);
+        var login_result = login(
+            $('#sb_login_username_input').val(),
+            $('#sb_login_password_input').val(),
+            onLoginSucceeded,
+            onLoginFailed
+        );
         $('#sb_login').fadeOut();
     });
     $('#sb_logout').hide().click( function(e) {
@@ -42,7 +47,7 @@ function createToolbar() {
         $('#sb_logout').fadeOut();
         $('#sb_logout_toolbar_icon').hide();
         $('#sb_login_toolbar_icon').show();
-        logout(onLogoutSucceeded, onLogoutFailed);
+        logout();
     });
     $('#sb_login_username_input').keyup( function() {
         $('#sb_login_submit_button').attr('disabled', $(this).val().length == 0 || $('#sb_login_password_input').val().length == 0);
@@ -69,9 +74,9 @@ function login(username, password, cbSuccess, cbFailure) {
 
     // dummy login
     if (username === 'abc' && password === '123') {
-        return cbSuccess();
+        return cbSuccess ? cbSuccess() : true;
     }
-    return cbFailure();
+    return cbFailure ? cbFailure() : false;
 }
 
 function onLoginSucceeded() {
@@ -81,6 +86,7 @@ function onLoginSucceeded() {
     $('#sb_login_password_input').val('');
     $('#sb_login_toolbar_icon').hide();
     $('#sb_logout_toolbar_icon').show();
+    $('#sb_logged_in_user').html('abc');
 }
 
 function onLoginFailed() {
@@ -91,4 +97,5 @@ function onLoginFailed() {
 
 function logout(cbSuccess, cbFailure) {
     // logout here
+    $('#sb_logged_in_user').html('Guest');
 }

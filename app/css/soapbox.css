@@ -40,6 +40,12 @@ section {
     background-color: #BBB;
 }
 
+#sb_welcome {
+    float: right;
+    padding: 8px;
+    padding-right: 14px;
+}
+
 #sb_login_toolbar_icon, #sb_logout_toolbar_icon, #sb_search_toolbar_icon, #sb_menu_toolbar_icon {
     float: right;
     width: 36px;
