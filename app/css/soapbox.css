@@ -77,9 +77,13 @@ section {
     width: 120px;
 }
 
+#sb_menu, #sb_logout {
+    width: 140px;
+}
+
 #sb_menu ul, #sb_menu li {
     margin: 0;
-    padding: 0;
+    padding: 4px;
     list-style-type: none;
 }
 
